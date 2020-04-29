@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Latency Test</title>
+</head>
+<body>
+	Latency Test
+
+	<script>
+		var socket = new WebSocket('wss://hkkl2xutr4.execute-api.us-east-1.amazonaws.com/dev')
+
+		socket.onopen = () => console.log('connected')
+
+		setInterval(() => socket.send(0), 1000)
+
+		socket.onmessage = ({ data }) => {
+			console.log('data', data)
+		}
+	</script>
+</body>
+</html>

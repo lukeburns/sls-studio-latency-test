@@ -1,0 +1,14 @@
+org: lukemburns
+app: studio-latency-test
+service: wss
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  region: us-east-1
+
+functions:
+  default:
+    handler: index.default
+    events:
+      - websocket: $default
